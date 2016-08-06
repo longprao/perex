@@ -1,0 +1,66 @@
+@import '../../styles/base';
+
+.container {
+  background: white;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  z-index: 200;
+  transition: all .25s linear;
+  @include media($desktop) {
+    &.active {
+      transform: translate3d(-200px, 0, 0);
+    }
+  }
+  @include media($tabletOnly) {
+    width: 65px;
+    &.active {
+      transform: translate3d(-65px, 0, 0);
+    }
+  }
+  @include media($mobile) {
+    left: -200px;
+    &.mobileActive {
+      transform: translate3d(200px, 0, 0);
+    }
+  }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
+  @include media($tabletOnly) {
+    margin-left: -18px;
+  }
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  font-size: 16px;
+  
+  a {
+    display: block;
+    padding: 10px 0 10px 30px;
+    position: relative;
+    min-height: 40px;
+  }
+  
+  i {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+.text {
+  @include media($tabletOnly) {
+    display: none;
+  }
+}

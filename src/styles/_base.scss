@@ -1,0 +1,29 @@
+/*
+Application Settings Go Here
+------------------------------------
+This file acts as a bundler for all variables/mixins/themes, so they
+can easily be swapped out without `core.scss` ever having to know.
+
+For example:
+
+@import './variables/colors';
+@import './variables/components';
+@import './themes/default';
+*/
+
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+
+$shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+$colorThreshold: 15%;
+$hoverOpacity: .75;
+$transition: all .25s ease-out;
+
+$dark: #333;
+$blue: #1e85c6;
+$darkBlue: #2355a4;
+$red: #FF193C;
+$yellow: #CCC521;
+$darkYellow: #B2AB07;
+$gray: #e9e9e9;

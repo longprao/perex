@@ -1,0 +1,77 @@
+@import '../../styles/base';
+
+.container {
+  background: $dark;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 15px 20px 0 220px;
+  z-index: 100;
+  transition: all .25s linear;
+  @include media($desktop) {
+    &.active {
+      padding-left: 20px;
+    }
+  }
+  @include media($tabletOnly) {
+    padding-left: 85px;
+  }
+  @include media($mobile) {
+    padding-left: 20px;
+    &.mobileActive {
+      padding-left: 220px;
+      
+      .search, .btn {
+        display: none;
+      }
+    }
+  }
+}
+
+.toggle {
+  float: left;
+  width: 25px;
+  margin-right: 20px;
+  padding-top: 7px;
+  cursor: pointer;
+  
+  .bar {
+    height: 3px;
+    margin-bottom: 4px;
+    background: white;
+  }
+}
+
+.search {
+  float: left;
+  width: 300px;
+  position: relative;
+  @include media($mobile) {
+    width: 150px;
+  }
+  
+  input {
+    color: $dark;
+    border: none;
+  }
+  
+  i {
+    color: $dark;
+  }
+}
+
+.actions {
+  float: right;
+  width: 150px;
+}
+
+.btn {
+  float: right;
+  margin-left: 20px;
+  @include media($mobile) {
+    margin: 0;
+  }
+}

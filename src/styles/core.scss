@@ -1,0 +1,402 @@
+:global {
+  @import '~normalize.css/normalize';
+  @import 'base';
+  @import 'fonts';
+  
+  * {
+    outline: none;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01);
+    color: $dark;
+    overflow-x: hidden;
+    font-size: 14px;
+    font-family: 'Roboto', $helvetica;
+    background: #e6e6e6;
+    
+    &.modal {
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: $blue;
+    transition: $transition;
+    &:hover {
+      text-decoration: none;
+      color: $darkBlue;
+    }
+  }
+  
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  input[type="search"] {
+    border-radius: 0;
+    appearance: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  span {
+    display: inline-block;
+  }
+  
+  i {
+    vertical-align: middle;
+  }
+  
+  .half {
+    width: 50%;
+    float: left;
+    @include media($mobile) {
+      width: 100%;
+    }
+  }
+  
+  .clear {
+    clear: both;
+    @include clearfix;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }
+  
+  .image-responsive {
+    a, img {
+      width: 100%;
+      display: block;
+    }
+    img {
+      height: auto;
+    }
+  }
+  
+  .visible-tablet {
+    display: none;
+    @include media($tablet) {
+      display: inline-block;
+    }
+  }
+  
+  .visible-phone {
+    display: none;
+    @include media($mobile) {
+      display: inline-block;
+    }
+  }
+  
+  .hidden-tablet {
+    @include media($tablet) {
+      display: none !important;
+    }
+  }
+  
+  .hidden-phone {
+    @include media($mobile) {
+      display: none !important;
+    }
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        a {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .close-btn, .toggle-single, .toggle-button, .toggle-popup, .btn {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .toggleable {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  
+  .wrapper {
+    @include clearfix;
+    position: relative;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .material-icons {
+    vertical-align: sub;
+  }
+  
+  .btn {
+    padding: 5px 20px;
+    background: $blue;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    transition: $transition;
+    
+    &:hover {
+      background: $darkBlue;
+      color: white;
+    }
+    
+    i {
+      font-size: 20px;
+    }
+  }
+  
+  .btn-small {
+    padding: 3px 10px;
+    font-size: 12px;
+  }
+  
+  .table-responsive {
+    overflow: auto;
+    
+    table {
+      min-width: 600px;
+    }
+  }
+  
+  table {
+    width: 100%;
+    text-align: center;
+    
+    thead {
+      font-weight: bold;
+      background: $gray;
+    }
+    
+    th, td {
+      padding: 10px;
+      &:first-child { text-align: left;}
+      &:last-child { text-align: right;}
+    }
+    
+    tbody {
+      tr {
+        &:hover { background: $gray;}
+        &:nth-child(2n+1) { background: white;}
+      }
+    }
+    
+    .unit {
+      font-size: 12px;
+    }
+  }
+  
+  #{$all-text-inputs}, textarea {
+    outline: none;
+    appearance: none;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid $gray;
+    
+    &:focus {
+      border-color: #afafaf;
+    }
+  }
+  
+  textarea {
+    height: 150px;
+  }
+  
+  .form-control {
+    position: relative;
+    
+    &.has-icon {
+      input {
+        padding-right: 30px;
+      }
+      
+      i {
+        color: $dark;
+        position: absolute;
+        top: 4px;
+        right: 5px;
+      }
+    }
+  }
+  
+  .form {
+    .row {
+      @include clearfix;
+      margin: 0 -10px;
+      
+      .form-group {
+        padding: 0 10px;
+        @include media($notMobile) {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+  }
+  
+  .label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    opacity: .8;
+  }
+  
+  .select {
+    position: relative;
+    cursor: pointer;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: 5px;
+      @include triangle(10px, $dark, down);
+    }
+    
+    select {
+      height: 30px;
+      width: 100%;
+      padding: 5px 10px;
+      background: white;
+      border-radius: 0;
+      color: $dark;
+      border: 1px solid $gray;
+      appearance: none;
+      
+      &:focus {
+        border-color: #afafaf;
+      }
+    }
+  }
+  
+  .radio, .checkbox {
+    display: inline-block;
+    margin-right: 10px;
+    
+    label {
+      padding-left: 20px;
+      position: relative;
+      display: block;
+      min-height: 16px;
+      cursor: pointer;
+      
+      &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        transition: $transition;
+        border-radius: 100%;
+        box-shadow: inset 0 0 0 0 $blue;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border: 2px solid white;
+      }
+    }
+    
+    input {
+      display: none;
+      
+      &:checked ~ label {
+        &:before {
+          box-shadow: inset 0 0 10px 10px $blue;
+        }
+      }
+    }
+  }
+  
+  .checkbox {
+    label {
+      &:before {
+        width: 12px;
+        height: 12px;
+        border-radius: 0;
+      }
+    }
+  }
+  
+  .alert {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    
+    &.success {
+      border: 1px solid $blue;
+      color: $blue;
+    }
+    
+    &.warning {
+      border: 1px solid $darkYellow;
+      color: $darkYellow;
+    }
+    
+    &.error {
+      border: 1px solid $red;
+      color: $red;
+    }
+  }
+  
+  .icon-logo {
+    background-image: url('../static/logo.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    
+    @include hidpi() {
+      background-image: url('../static/logo@2x.png');
+    }
+    
+    @include hidpi(2.3) {
+      background-image: url('../static/logo@3x.png');
+    }
+  }
+}

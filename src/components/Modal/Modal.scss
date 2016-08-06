@@ -1,0 +1,76 @@
+@import '../../styles/base';
+
+:global {
+  .modal-bg {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: opacity 0.2s!important;
+    z-index: 300;
+  }
+  
+  .modal-wrapper {
+    background: white;
+    width: 600px;
+    max-width: 80%;
+    min-height: 100px;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 301;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.2s!important;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+    transform: translate3d(-50%, -50%, 0);
+  }
+  
+  .modal-header {
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+    background: #f3f3f3;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-anim-enter {
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.2s !important;
+  
+    &.modal-wrapper {
+      transform: translate3d(-50%, -50%, 0) scale3d(0.2, 0.2, 1);
+    }
+  }
+
+  .modal-anim-enter.modal-anim-enter-active {
+    opacity: 1;
+  
+    &.modal-wrapper {
+      transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    }
+  }
+
+  .modal-anim-leave {
+    opacity: 1;
+  
+    &.modal-wrapper {
+      transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    }
+  }
+
+  .modal-anim-leave.modal-anim-leave-active {
+    opacity: 0;
+  
+    &.modal-wrapper {
+      transform: translate3d(-50%, -50%, 0) scale3d(0.7, 0.7, 1);
+    }
+  }
+}

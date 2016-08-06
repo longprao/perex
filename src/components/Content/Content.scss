@@ -1,0 +1,18 @@
+@import '../../styles/base';
+
+.container {
+  padding-top: 60px;
+  padding-left: 200px;
+  transition: all .25s linear;
+  @include media($tabletOnly) {
+    padding-left: 65px;
+  }
+  @include media($mobile) {
+    padding-left: 0;
+  }
+  @include media($desktop) {
+    &.active {
+      padding-left: 0;
+    }
+  }
+}
