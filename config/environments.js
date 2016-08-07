@@ -14,15 +14,15 @@ export default {
       enabled: false,
       options: {
         host: 'http://localhost:8000',
-        match: /^\/api\/.*/
-      }
-    }
+        match: /^\/api\/.*/,
+      },
+    },
   }),
 
   // ======================================================
   // Overrides when NODE_ENV === 'production'
   // ======================================================
-  production: (config) => ({
+  production: (config) => ({ // eslint-disable-line
     compiler_public_path: '/',
     compiler_fail_on_warning: false,
     compiler_hash_type: 'chunkhash',
@@ -30,7 +30,7 @@ export default {
     compiler_stats: {
       chunks: true,
       chunkModules: true,
-      colors: true
-    }
-  })
-}
+      colors: true,
+    },
+  }),
+};

@@ -213,8 +213,12 @@
     
     th, td {
       padding: 10px;
-      &:first-child { text-align: left;}
-      &:last-child { text-align: right;}
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
     }
     
     tbody {
