@@ -1,4 +1,7 @@
-// module.exports = {
+var path = require('path');
+var fs = require('fs');
+
+module.exports = {
   // locals: function(options) {
     // // Return custom template variables here.
     // return {};
@@ -21,5 +24,13 @@
   // },
 
   // beforeInstall: function(options) {},
-  // afterInstall: function(options) {},
-// };
+  afterInstall: function(options) {
+    const name = options.entity.name;
+    const oldPath = path.resolve(__dirname, '../../', `src/routes/${name}/modules/${name}.js`);
+    const newPath = path.resolve(__dirname, '../../', `src/routes/${name}/modules/${name.toLowerCase()}.js`);
+    
+    setTimeout(function () {
+      fs.renameSync(oldPath, newPath);
+    }, 500);
+  },
+};

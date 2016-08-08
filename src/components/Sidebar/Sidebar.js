@@ -34,37 +34,37 @@ class Sidebar extends Component {
     
         <ul className={styles.menu}>
           <li>
-            <Link to="/transactions" onClick={this.handleClick}>
+            <IndexLink to="/" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">event</i>
               <span className={styles.text}>Transactions</span>
-            </Link>
+            </IndexLink>
           </li>
           <li>
-            <Link to="/charts" onClick={this.handleClick}>
+            <Link to="/charts" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">show_chart</i>
               <span className={styles.text}>Charts</span>
             </Link>
           </li>
           <li>
-            <Link to="/categories" onClick={this.handleClick}>
+            <Link to="/categories" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">library_books</i>
               <span className={styles.text}>Categories</span>
             </Link>
           </li>
           <li>
-            <Link to="/payess" onClick={this.handleClick}>
+            <Link to="/payess" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">people_outline</i>
               <span className={styles.text}>Payees</span>
             </Link>
           </li>
           <li>
-            <Link to="/settings" onClick={this.handleClick}>
+            <Link to="/settings" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">settings</i>
               <span className={styles.text}>Settings</span>
             </Link>
           </li>
           <li>
-            <Link to="/profile" onClick={this.handleClick}>
+            <Link to="/profile" activeClassName="active" onClick={this.handleClick}>
               <i className="material-icons">perm_identity</i>
               <span className={styles.text}>Profile</span>
             </Link>
